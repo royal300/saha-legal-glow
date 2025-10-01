@@ -44,9 +44,30 @@ const BookAppointment = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Implement email sending via edge function
-      // For now, simulate submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const { supabase } = await import("@/integrations/supabase/client");
+      
+      const appointmentData = {
+        fullName: formData.fullName,
+        email: formData.email,
+        mobile: formData.mobile,
+        caseType: formData.caseType,
+        caseDetails: formData.caseDetails,
+        appointmentDate: date.toLocaleDateString('en-IN', { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        }),
+      };
+
+      const { error } = await supabase.functions.invoke('send-appointment-email', {
+        body: appointmentData,
+      });
+
+      if (error) {
+        console.error("Email error:", error);
+        throw error;
+      }
 
       setIsSubmitted(true);
       toast.success("Appointment booked successfully!");
@@ -64,6 +85,7 @@ const BookAppointment = () => {
         setIsSubmitted(false);
       }, 3000);
     } catch (error) {
+      console.error("Appointment booking error:", error);
       toast.error("Failed to book appointment. Please try again.");
     } finally {
       setIsSubmitting(false);
