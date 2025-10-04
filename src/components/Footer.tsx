@@ -15,7 +15,7 @@ const Footer = () => {
                   Advocate
                 </span>
                 <span className="text-white font-playfair text-sm -mt-1">
-                  Rajkumar Saha
+                  Raj Kumar Sha
                 </span>
               </div>
             </div>
@@ -66,25 +66,34 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-golden mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
-                  Barasat Court, Kolkata
+                  8, Mochi Mahal, Sadar Bazar<br />
+                  Barrackpore, Kolkata – 700120
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-golden flex-shrink-0" />
-                <a
-                  href="tel:+916290226200"
-                  className="text-gray-300 hover:text-golden transition-colors text-sm"
-                >
-                  +91 6290226200
-                </a>
+              <li className="flex items-start space-x-3">
+                <Phone className="h-5 w-5 text-golden mt-0.5 flex-shrink-0" />
+                <div className="space-y-1">
+                  <a
+                    href="tel:8013763607"
+                    className="block text-gray-300 hover:text-golden transition-colors text-sm"
+                  >
+                    8013763607
+                  </a>
+                  <a
+                    href="tel:9143175368"
+                    className="block text-gray-300 hover:text-golden transition-colors text-sm"
+                  >
+                    9143175368
+                  </a>
+                </div>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-golden flex-shrink-0" />
                 <a
-                  href="mailto:karamit819@gmail.com"
-                  className="text-gray-300 hover:text-golden transition-colors text-sm"
+                  href="mailto:rajkumarsha.advocate@gmail.com"
+                  className="text-gray-300 hover:text-golden transition-colors text-sm break-all"
                 >
-                  karamit819@gmail.com
+                  rajkumarsha.advocate@gmail.com
                 </a>
               </li>
             </ul>
@@ -123,9 +132,20 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-golden/20 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Advocate Rajkumar Saha. All rights reserved.
+        <div className="border-t border-golden/20 mt-8 pt-8">
+          <p className="text-gray-400 text-sm text-center mb-2">
+            © {new Date().getFullYear()} Advocate Raj Kumar Sha. All rights reserved.
+          </p>
+          <p className="text-gray-500 text-xs text-center">
+            Powered by{" "}
+            <a
+              href="https://www.royal300.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-golden hover:text-amber-500 transition-colors font-semibold"
+            >
+              ROYAL300
+            </a>
           </p>
         </div>
       </div>

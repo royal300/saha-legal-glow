@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
     { name: "Book Appointment", path: "/book-appointment" },
     { name: "Contact", path: "/contact" },
   ];
@@ -41,7 +42,7 @@ const Navbar = () => {
                 Advocate
               </span>
               <span className="text-white font-playfair text-sm -mt-1">
-                Rajkumar Saha
+                Raj Kumar Sha
               </span>
             </div>
           </Link>

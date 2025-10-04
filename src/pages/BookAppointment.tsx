@@ -60,7 +60,7 @@ const BookAppointment = () => {
         }),
       };
 
-      const { error } = await supabase.functions.invoke('send-appointment-email', {
+      const { data, error } = await supabase.functions.invoke('send-appointment-email', {
         body: appointmentData,
       });
 
@@ -68,6 +68,8 @@ const BookAppointment = () => {
         console.error("Email error:", error);
         throw error;
       }
+
+      console.log("Email sent successfully:", data);
 
       setIsSubmitted(true);
       toast.success("Appointment booked successfully!");
@@ -116,7 +118,7 @@ const BookAppointment = () => {
             Book Your Appointment
           </h1>
           <p className="text-muted-foreground text-lg">
-            Schedule a consultation with Advocate Rajkumar Saha
+            Schedule a consultation with Advocate Raj Kumar Sha, B.A., L.L.B. (Honours)
           </p>
         </div>
 

@@ -5,10 +5,12 @@ import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import heroBackground from "@/assets/hero-background.jpg";
 import lawyerPortrait from "@/assets/lawyer-portrait.jpg";
+import courtBuilding from "@/assets/court-building.jpg";
+import lawBooks from "@/assets/law-books.jpg";
 
 const Home = () => {
   const [typewriterText, setTypewriterText] = useState("");
-  const fullText = "Advocate Rajkumar Saha";
+  const fullText = "Advocate Raj Kumar Sha";
 
   useEffect(() => {
     let index = 0;
@@ -135,23 +137,35 @@ const Home = () => {
       <section className="section-padding bg-navy text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-up">
+            <div className="animate-slide-up space-y-4">
               <img
                 src={lawyerPortrait}
-                alt="Advocate Rajkumar Saha"
+                alt="Advocate Raj Kumar Sha"
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
+              <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                <img
+                  src={courtBuilding}
+                  alt="Court Building"
+                  className="rounded-lg shadow-lg w-full h-40 object-cover"
+                />
+                <img
+                  src={lawBooks}
+                  alt="Legal Books and Scales"
+                  className="rounded-lg shadow-lg w-full h-40 object-cover"
+                />
+              </div>
             </div>
 
             <div className="animate-fade-in">
               <h2 className="text-4xl font-playfair font-bold text-golden mb-6">
-                About Advocate Rajkumar Saha
+                About Advocate Raj Kumar Sha
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                With over 15 years of dedicated legal practice at Barasat Court, Advocate Rajkumar Saha has built a reputation for excellence, integrity, and unwavering commitment to justice.
+                Advocate Raj Kumar Sha, B.A., L.L.B. (Honours), is a distinguished legal practitioner at Barrackpore Court with a reputation for excellence, integrity, and unwavering commitment to justice.
               </p>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Specializing in Criminal Law, Civil Litigation, Family Disputes, and Corporate Law, he has successfully represented hundreds of clients, earning their trust and respect through his strategic legal acumen and compassionate approach.
+                Specializing in Criminal Law, Civil Litigation, Family Disputes, Corporate Law, and more, he has successfully represented numerous clients, earning their trust through strategic legal acumen and a compassionate approach.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

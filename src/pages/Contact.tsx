@@ -42,10 +42,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-4">
-            Contact Us
+            Get in Touch
           </h1>
           <p className="text-muted-foreground text-lg">
-            Get in touch with us for legal consultation and support
+            Reach out to Advocate Raj Kumar Sha, B.A., L.L.B. (Honours) for legal consultation
           </p>
         </div>
 
@@ -60,8 +60,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-navy mb-2">Office Address</h3>
                   <p className="text-muted-foreground text-sm">
-                    Barasat Court<br />
-                    Kolkata, West Bengal
+                    8, Mochi Mahal, Sadar Bazar<br />
+                    Barrackpore, Kolkata – 700120
                   </p>
                 </div>
               </div>
@@ -73,13 +73,21 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-golden" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy mb-2">Phone Number</h3>
-                  <a
-                    href="tel:+916290226200"
-                    className="text-muted-foreground text-sm hover:text-golden transition-colors"
-                  >
-                    +91 6290226200
-                  </a>
+                  <h3 className="font-semibold text-navy mb-2">Phone Numbers</h3>
+                  <div className="space-y-1">
+                    <a
+                      href="tel:8013763607"
+                      className="block text-muted-foreground text-sm hover:text-golden transition-colors"
+                    >
+                      8013763607
+                    </a>
+                    <a
+                      href="tel:9143175368"
+                      className="block text-muted-foreground text-sm hover:text-golden transition-colors"
+                    >
+                      9143175368
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -92,10 +100,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-navy mb-2">Email Address</h3>
                   <a
-                    href="mailto:karamit819@gmail.com"
+                    href="mailto:rajkumarsha.advocate@gmail.com"
                     className="text-muted-foreground text-sm hover:text-golden transition-colors break-all"
                   >
-                    karamit819@gmail.com
+                    rajkumarsha.advocate@gmail.com
                   </a>
                 </div>
               </div>
@@ -109,8 +117,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-navy mb-2">Office Hours</h3>
                   <p className="text-muted-foreground text-sm">
-                    Monday - Friday: 10:00 AM - 6:00 PM<br />
-                    Saturday: 10:00 AM - 2:00 PM<br />
+                    Monday - Saturday: 10:00 AM - 6:00 PM<br />
                     Sunday: Closed
                   </p>
                 </div>
@@ -207,7 +214,7 @@ const Contact = () => {
         <div className="mt-12 animate-fade-in">
           <div className="card-elegant p-4">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.7244498765984!2d88.48264931495762!3d22.719719785096916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e5d9b5c5c5f%3A0x5c5c5c5c5c5c5c5c!2sBarasat%20Court!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.0!2d88.38!3d22.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ1JzM2LjAiTiA4OMKwMjInNDguMCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -215,7 +222,7 @@ const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="rounded-lg"
-              title="Barasat Court Location"
+              title="Barrackpore Court Location"
             ></iframe>
           </div>
         </div>
