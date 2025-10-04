@@ -22,6 +22,12 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Check if RESEND_API_KEY is set
+    if (!RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set");
+      throw new Error("Email service not configured. Please contact the administrator.");
+    }
+
     const appointmentData: AppointmentRequest = await req.json();
     console.log("Received appointment request:", appointmentData);
 
