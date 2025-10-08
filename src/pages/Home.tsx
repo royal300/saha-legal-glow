@@ -29,23 +29,23 @@ const Home = () => {
   const services = [
     {
       icon: Gavel,
-      title: "Criminal Law",
-      description: "Expert defense and prosecution in criminal cases with proven track record of successful outcomes.",
+      title: "Criminal Cases",
+      description: "Expert defense in criminal cases with proven track record of successful outcomes.",
     },
     {
       icon: Scale,
-      title: "Civil Law",
+      title: "Civil Matters",
       description: "Comprehensive civil litigation services including property disputes, contracts, and damages.",
     },
     {
       icon: Users,
       title: "Family Disputes",
-      description: "Sensitive handling of divorce, custody, maintenance, and other family matters with care.",
+      description: "Sensitive handling of family disputes including child custody.",
     },
     {
       icon: Briefcase,
-      title: "Corporate Law",
-      description: "Business formation, contracts, compliance, and corporate dispute resolution services.",
+      title: "DRT/LRT",
+      description: "Handling and resolving disputes related to cases under the Debt Recovery Tribunal and Land Recovery Tribunal.",
     },
   ];
 
@@ -115,7 +115,7 @@ const Home = () => {
               Our Legal Services
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Comprehensive legal solutions tailored to your needs with decades of experience
+              Comprehensive legal solutions tailored to your needs with 8+ Years experience
             </p>
           </div>
 
@@ -162,24 +162,24 @@ const Home = () => {
                 About Advocate Raj Kumar Sha
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Advocate Raj Kumar Sha, B.A., L.L.B. (Honours), is a distinguished legal practitioner at Barrackpore Court with a reputation for excellence, integrity, and unwavering commitment to justice.
+                Advocate Raj Kumar Sha, B.A (Honours), L.L.B., is a distinguished legal practitioner at Barrackpore Court with a reputation for excellence, integrity, and unwavering commitment to justice.
               </p>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Specializing in Criminal Law, Civil Litigation, Family Disputes, Corporate Law, and more, he has successfully represented numerous clients, earning their trust through strategic legal acumen and a compassionate approach.
+                Specializing in Criminal Cases, Civil Matters, Family Disputes, DRT/LRT, and more, he has successfully represented numerous clients, earning their trust through strategic legal acumen and a compassionate approach.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="flex items-start space-x-3">
                   <Award className="h-6 w-6 text-golden flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">15+ Years Experience</h3>
+                    <h3 className="font-semibold mb-1">8+ Years Experience</h3>
                     <p className="text-sm text-gray-400">Proven track record of success</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Shield className="h-6 w-6 text-golden flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">500+ Cases Won</h3>
+                    <h3 className="font-semibold mb-1">Several Cases Won</h3>
                     <p className="text-sm text-gray-400">Delivering favorable outcomes</p>
                   </div>
                 </div>
@@ -193,8 +193,8 @@ const Home = () => {
                 <div className="flex items-start space-x-3">
                   <Clock className="h-6 w-6 text-golden flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">24/7 Support</h3>
-                    <p className="text-sm text-gray-400">Always here when you need us</p>
+                    <h3 className="font-semibold mb-1">Available Support</h3>
+                    <p className="text-sm text-gray-400">Always here when you need legal support</p>
                   </div>
                 </div>
               </div>

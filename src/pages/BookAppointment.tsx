@@ -23,6 +23,7 @@ const BookAppointment = () => {
     email: "",
     mobile: "",
     caseType: "",
+    timeSlot: "",
     caseDetails: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,6 +52,7 @@ const BookAppointment = () => {
         email: formData.email,
         mobile: formData.mobile,
         caseType: formData.caseType,
+        timeSlot: formData.timeSlot,
         caseDetails: formData.caseDetails,
         appointmentDate: date.toLocaleDateString('en-IN', { 
           weekday: 'long', 
@@ -81,6 +83,7 @@ const BookAppointment = () => {
           email: "",
           mobile: "",
           caseType: "",
+          timeSlot: "",
           caseDetails: "",
         });
         setDate(undefined);
@@ -118,7 +121,10 @@ const BookAppointment = () => {
             Book Your Appointment
           </h1>
           <p className="text-muted-foreground text-lg">
-            Schedule a consultation with Advocate Raj Kumar Sha, B.A., L.L.B. (Honours)
+            Schedule a consultation with Advocate Raj Kumar Sha, B.A (Honours), L.L.B.
+          </p>
+          <p className="text-golden font-semibold text-xl mt-2">
+            Consultation Fee: ₹400/-
           </p>
         </div>
 
@@ -214,10 +220,14 @@ const BookAppointment = () => {
                     <SelectValue placeholder="Select case type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="criminal">Criminal Law</SelectItem>
-                    <SelectItem value="civil">Civil Law</SelectItem>
+                    <SelectItem value="criminal">Criminal Cases</SelectItem>
+                    <SelectItem value="civil">Civil Matters</SelectItem>
                     <SelectItem value="family">Family Disputes</SelectItem>
-                    <SelectItem value="corporate">Corporate Law</SelectItem>
+                    <SelectItem value="drt-lrt">DRT/LRT</SelectItem>
+                    <SelectItem value="property">Property Law</SelectItem>
+                    <SelectItem value="consumer">Consumer Law</SelectItem>
+                    <SelectItem value="labour">Labour & Employment Disputes</SelectItem>
+                    <SelectItem value="tax">Tax Law</SelectItem>
                     <SelectItem value="others">Others</SelectItem>
                   </SelectContent>
                 </Select>
@@ -225,10 +235,34 @@ const BookAppointment = () => {
             </div>
           </div>
 
+          {/* Time Slot Selection */}
+          <div className="mb-8">
+            <Label className="text-navy font-semibold mb-3 block">
+              Preferred Time Slot
+            </Label>
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+              {["12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"].map((time) => (
+                <button
+                  key={time}
+                  type="button"
+                  onClick={() => setFormData({ ...formData, timeSlot: time })}
+                  className={cn(
+                    "px-4 py-3 rounded-lg border-2 transition-all text-sm font-medium",
+                    formData.timeSlot === time
+                      ? "border-golden bg-golden/10 text-golden"
+                      : "border-muted hover:border-golden/50"
+                  )}
+                >
+                  {time}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Case Details */}
           <div className="mb-8">
             <Label htmlFor="caseDetails" className="text-navy font-semibold">
-              Case Details
+              Case/Dispute Details
             </Label>
             <Textarea
               id="caseDetails"
@@ -236,7 +270,7 @@ const BookAppointment = () => {
               onChange={(e) =>
                 setFormData({ ...formData, caseDetails: e.target.value })
               }
-              placeholder="Please provide details about your case..."
+              placeholder="...Please provide brief details about your case/dispute...."
               rows={6}
               className="mt-2"
             />

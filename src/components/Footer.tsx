@@ -20,7 +20,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Expert Legal Solutions with Trust & Integrity. Specializing in Criminal Law, Civil Law, Family Disputes, and Corporate Law.
+              Expert Legal Solutions with Trust & Integrity. Specializing in Criminal Cases, Civil Matters, Family Disputes, and DRT/LRT.
             </p>
           </div>
 

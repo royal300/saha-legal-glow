@@ -5,7 +5,7 @@ const Services = () => {
   const services = [
     {
       icon: Scale,
-      title: "Criminal Law",
+      title: "Criminal Cases",
       description: "Expert defense in criminal cases including sessions trials, bail applications, anticipatory bail, and quashing petitions.",
       details: [
         "Sessions Court Trials",
@@ -20,7 +20,7 @@ const Services = () => {
     },
     {
       icon: FileText,
-      title: "Civil Law",
+      title: "Civil Matters",
       description: "Comprehensive civil litigation services for property disputes, contract matters, and civil suits.",
       details: [
         "Property Disputes",
@@ -36,7 +36,7 @@ const Services = () => {
     {
       icon: Users,
       title: "Family Law",
-      description: "Sensitive handling of family matters including divorce, custody, and domestic violence cases.",
+      description: "Sensitive handling of family disputes including child custody and domestic violence cases.",
       details: [
         "Divorce Proceedings",
         "Child Custody",
@@ -50,15 +50,15 @@ const Services = () => {
     },
     {
       icon: Building2,
-      title: "Corporate Law",
-      description: "Complete corporate legal solutions for businesses, from formation to compliance and mergers.",
+      title: "DRT & LRT",
+      description: "Handling and resolving disputes related to cases under the Debt Recovery Tribunal and Land Recovery Tribunal.",
       details: [
-        "Company Formation",
-        "Contract Drafting & Review",
-        "Regulatory Compliance",
-        "Mergers & Acquisitions",
-        "Corporate Governance",
-        "Business Agreements"
+        "Debt Recovery Matters",
+        "Land Recovery Cases",
+        "Loan Recovery",
+        "Tribunal Representation",
+        "Recovery Proceedings",
+        "Appeals & Revisions"
       ],
       gradient: "from-purple-500/10 to-violet-500/10",
       iconColor: "text-purple-600"
@@ -68,10 +68,7 @@ const Services = () => {
       title: "Property Law",
       description: "Expert assistance in property transactions, documentation, and dispute resolution.",
       details: [
-        "Property Documentation",
-        "Title Verification",
-        "Property Registration",
-        "Land Acquisition",
+        "Property Registration / Land Registration",
         "Property Disputes",
         "Lease Agreements"
       ],
@@ -95,7 +92,7 @@ const Services = () => {
     },
     {
       icon: Briefcase,
-      title: "Labour & Employment Law",
+      title: "Labour & Employment Disputes",
       description: "Comprehensive legal support for employment-related matters and workplace disputes.",
       details: [
         "Employment Disputes",
@@ -133,7 +130,7 @@ const Services = () => {
             Our Legal Services
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive legal solutions tailored to your needs at Barrackpore Court
+            Comprehensive legal solutions tailored to your needs with 8+ Years experience
           </p>
         </div>
 
