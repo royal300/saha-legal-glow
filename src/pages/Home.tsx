@@ -4,9 +4,9 @@ import { Scale, Gavel, Users, Briefcase, Award, Clock, Shield } from "lucide-rea
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import heroBackground from "@/assets/hero-background.jpg";
-import lawyerPortrait from "@/assets/lawyer-portrait.jpg";
+import rajKumarShaPortrait from "@/assets/raj-kumar-sha-portrait.png";
 import courtBuilding from "@/assets/court-building.jpg";
-import lawBooks from "@/assets/law-books.jpg";
+import rajKumarShaOffice from "@/assets/raj-kumar-sha-office.jpg";
 
 const Home = () => {
   const [typewriterText, setTypewriterText] = useState("");
@@ -139,7 +139,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up space-y-4">
               <img
-                src={lawyerPortrait}
+                src={rajKumarShaPortrait}
                 alt="Advocate Raj Kumar Sha"
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
@@ -150,8 +150,8 @@ const Home = () => {
                   className="rounded-lg shadow-lg w-full h-40 object-cover"
                 />
                 <img
-                  src={lawBooks}
-                  alt="Legal Books and Scales"
+                  src={rajKumarShaOffice}
+                  alt="Advocate Raj Kumar Sha Office"
                   className="rounded-lg shadow-lg w-full h-40 object-cover"
                 />
               </div>
