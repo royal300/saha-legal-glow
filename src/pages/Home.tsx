@@ -162,7 +162,7 @@ const Home = () => {
                 About Advocate Raj Kumar Sha
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Advocate Raj Kumar Sha, B.A (Honours), L.L.B., is a distinguished legal practitioner at Barrackpore Court with a reputation for excellence, integrity, and unwavering commitment to justice.
+                Advocate Raj Kumar Sha, B.A. (Honours), L.L.B. (Honours), is a distinguished legal practitioner at Barrackpore Court with a reputation for excellence, integrity, and unwavering commitment to justice.
               </p>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 Specializing in Criminal Cases, Civil Matters, Family Disputes, DRT/LRT, and more, he has successfully represented numerous clients, earning their trust through strategic legal acumen and a compassionate approach.

@@ -45,7 +45,7 @@ const Contact = () => {
             Get in Touch
           </h1>
           <p className="text-muted-foreground text-lg">
-            Reach out to Advocate Raj Kumar Sha, B.A., L.L.B. (Honours) for legal consultation
+            Reach out to Advocate Raj Kumar Sha, B.A. (Honours), L.L.B. (Honours) for legal consultation
           </p>
         </div>
 
@@ -100,10 +100,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-navy mb-2">Email Address</h3>
                   <a
-                    href="mailto:rajkumarsha.advocate@gmail.com"
+                    href="mailto:advocaterajkumarsha@gmail.com"
                     className="text-muted-foreground text-sm hover:text-golden transition-colors break-all"
                   >
-                    rajkumarsha.advocate@gmail.com
+                    advocaterajkumarsha@gmail.com
                   </a>
                 </div>
               </div>

@@ -62,19 +62,19 @@ const BookAppointment = () => {
         }),
       };
 
-      const { data, error } = await supabase.functions.invoke('send-appointment-email', {
+      const { data, error } = await supabase.functions.invoke('save-to-sheets', {
         body: appointmentData,
       });
 
       if (error) {
-        console.error("Email error:", error);
+        console.error("Booking error:", error);
         throw error;
       }
 
-      console.log("Email sent successfully:", data);
+      console.log("Booking saved successfully:", data);
 
       setIsSubmitted(true);
-      toast.success("Appointment booked successfully!");
+      toast.success("Thank you! Partial booking received. Check your email for payment to confirm your appointment.");
 
       // Reset form
       setTimeout(() => {
@@ -88,7 +88,7 @@ const BookAppointment = () => {
         });
         setDate(undefined);
         setIsSubmitted(false);
-      }, 3000);
+      }, 5000);
     } catch (error) {
       console.error("Appointment booking error:", error);
       toast.error("Failed to book appointment. Please try again.");
@@ -103,10 +103,10 @@ const BookAppointment = () => {
         <div className="text-center max-w-md animate-scale-in">
           <CheckCircle2 className="h-20 w-20 text-green-500 mx-auto mb-6" />
           <h1 className="text-3xl font-playfair font-bold text-navy mb-4">
-            Thank You for Booking!
+            Thank You!
           </h1>
           <p className="text-muted-foreground text-lg">
-            We have received your appointment request and will get in touch with you soon.
+            Partial booking received. Check your email for payment to confirm your appointment.
           </p>
         </div>
       </div>
@@ -121,11 +121,13 @@ const BookAppointment = () => {
             Book Your Appointment
           </h1>
           <p className="text-muted-foreground text-lg">
-            Schedule a consultation with Advocate Raj Kumar Sha, B.A (Honours), L.L.B.
+            Schedule a consultation with Advocate Raj Kumar Sha, B.A. (Honours), L.L.B. (Honours)
           </p>
-          <p className="text-golden font-semibold text-xl mt-2">
-            Consultation Fee: ₹400/-
-          </p>
+          <div className="mt-4 inline-block px-6 py-3 bg-golden/10 border-2 border-golden rounded-lg">
+            <p className="text-golden font-bold text-2xl">
+              Consultation Fee: ₹400/-
+            </p>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="card-elegant p-8 md:p-12 animate-slide-up">
