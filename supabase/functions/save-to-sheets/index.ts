@@ -25,6 +25,8 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const appointmentData: AppointmentRequest = await req.json();
     console.log("Received appointment data:", appointmentData);
+    console.log("Email from request:", appointmentData.email);
+    console.log("Mobile from request:", appointmentData.mobile);
 
     // Generate a random booking ID
     const bookingId = `BK${Date.now()}${Math.floor(Math.random() * 1000)}`;
@@ -58,6 +60,8 @@ const handler = async (req: Request): Promise<Response> => {
     };
 
     console.log("Sending data to Google Sheets:", sheetData);
+    console.log("Email being sent:", sheetData.email);
+    console.log("Mobile being sent:", sheetData.mobile);
 
     // Send data to Google Sheets webhook
     const sheetsResponse = await fetch(sheetsWebhookUrl, {
