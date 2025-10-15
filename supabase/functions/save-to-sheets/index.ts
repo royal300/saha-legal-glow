@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
     const bookingId = `BK${Date.now()}${Math.floor(Math.random() * 1000)}`;
 
     // Get the Google Sheets webhook URL from environment
-    const sheetsWebhookUrl = Deno.env.get("GOOGLE_SHEETS_WEBHOOK_URL");
+    const sheetsWebhookUrl = Deno.env.get("GOOGLE_SHEETS_WEBHOOK_URL") || "https://script.google.com/macros/s/AKfycbxWqmiWEiTsUH1-4Zf7xxfVGyI4leAVPLwXMDhiDBzkDbLIfNwU-jXFbWRmRc2uw6FD/exec";
 
     if (!sheetsWebhookUrl) {
       console.error("Google Sheets webhook URL not configured");

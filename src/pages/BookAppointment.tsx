@@ -46,7 +46,7 @@ const BookAppointment = () => {
 
     try {
       const { supabase } = await import("@/integrations/supabase/client");
-      
+
       const appointmentData = {
         fullName: formData.fullName,
         email: formData.email,
@@ -54,14 +54,15 @@ const BookAppointment = () => {
         caseType: formData.caseType,
         timeSlot: formData.timeSlot,
         caseDetails: formData.caseDetails,
-        appointmentDate: date.toLocaleDateString('en-IN', { 
-          weekday: 'long', 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
+        appointmentDate: date.toLocaleDateString('en-IN', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
         }),
       };
 
+      // Save booking to sheets
       const { data, error } = await supabase.functions.invoke('save-to-sheets', {
         body: appointmentData,
       });
@@ -71,10 +72,19 @@ const BookAppointment = () => {
         throw error;
       }
 
-      console.log("Booking saved successfully:", data);
+      // Send appointment email via Supabase Edge Function
+      const { error: emailError } = await supabase.functions.invoke('send-appointment-email', {
+        body: appointmentData,
+      });
+
+      if (emailError) {
+        console.error("Email sending error:", emailError);
+        toast.error("Booking saved, but failed to send confirmation email.");
+      } else {
+        toast.success("Thank you! Partial booking received. Check your email for payment to confirm your appointment.");
+      }
 
       setIsSubmitted(true);
-      toast.success("Thank you! Partial booking received. Check your email for payment to confirm your appointment.");
 
       // Reset form
       setTimeout(() => {
