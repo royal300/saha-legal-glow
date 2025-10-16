@@ -23,23 +23,24 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Parse request JSON
     const appointmentData: AppointmentRequest = await req.json();
     console.log("Received appointment data:", appointmentData);
-    console.log("Email from request:", appointmentData.email);
-    console.log("Mobile from request:", appointmentData.mobile);
 
     // Generate a random booking ID
     const bookingId = `BK${Date.now()}${Math.floor(Math.random() * 1000)}`;
 
-    // Get the Google Sheets webhook URL from environment
-    // Replace this URL with your new Google Apps Script webhook URL
-    const sheetsWebhookUrl = Deno.env.get("GOOGLE_SHEETS_WEBHOOK_URL") || "https://script.google.com/macros/s/AKfycbzRmnTGEDeTCMHH29ynncs1LB5fxfLr_MiA0i2KJCfgcqdouyZaR_Sa6Lux-6clX_lL/exec";
+    // Google Sheets webhook URL
+    const sheetsWebhookUrl =
+      Deno.env.get("GOOGLE_SHEETS_WEBHOOK_URL") ||
+      "https://script.google.com/macros/s/AKfycbzRmnTGEDeTCMHH29ynncs1LB5fxfLr_MiA0i2KJCfgcqdouyZaR_Sa6Lux-6clX_lL/exec";
 
     if (!sheetsWebhookUrl) {
       console.error("Google Sheets webhook URL not configured");
       return new Response(
-        JSON.stringify({ 
-          error: "Google Sheets integration not configured. Please contact support." 
+        JSON.stringify({
+          error:
+            "Google Sheets integration not configured. Please contact support.",
         }),
         {
           status: 500,
@@ -61,9 +62,6 @@ const handler = async (req: Request): Promise<Response> => {
     };
 
     console.log("Sending data to Google Sheets:", sheetData);
-    console.log("Email being sent:", sheetData.email);
-    console.log("Mobile being sent:", sheetData.mobile);
-    console.log("Full sheetData object:", JSON.stringify(sheetData, null, 2));
 
     // Send data to Google Sheets webhook
     const sheetsResponse = await fetch(sheetsWebhookUrl, {
@@ -77,28 +75,21 @@ const handler = async (req: Request): Promise<Response> => {
     if (!sheetsResponse.ok) {
       const errorText = await sheetsResponse.text();
       console.error("Google Sheets webhook error:", errorText);
-      console.error("Response status:", sheetsResponse.status);
-      console.error("Response headers:", Object.fromEntries(sheetsResponse.headers.entries()));
       throw new Error(`Failed to save to Google Sheets: ${errorText}`);
     }
 
     const sheetsResponseText = await sheetsResponse.text();
     console.log("Google Sheets response:", sheetsResponseText);
 
-    console.log("Successfully saved to Google Sheets");
-
     return new Response(
-      JSON.stringify({ 
-        success: true, 
+      JSON.stringify({
+        success: true,
         bookingId,
-        message: "Appointment data saved successfully" 
+        message: "Appointment data saved successfully",
       }),
       {
         status: 200,
-        headers: {
-          "Content-Type": "application/json",
-          ...corsHeaders,
-        },
+        headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
   } catch (error: any) {

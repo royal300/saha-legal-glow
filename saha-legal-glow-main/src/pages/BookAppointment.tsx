@@ -72,6 +72,34 @@ const BookAppointment = () => {
       }
 
       console.log("Booking saved successfully:", data);
+      const bookingId = (data as any)?.bookingId;
+
+      // Call N8N webhook directly
+      try {
+        const n8nWebhookUrl = 'https://n8n.srv985905.hstgr.cloud/webhook/appointment-booking';
+        
+        const response = await fetch(n8nWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...appointmentData,
+            bookingId,
+            source: 'website',
+            timestamp: new Date().toISOString(),
+          }),
+        });
+
+        if (response.ok) {
+          console.log('N8N webhook called successfully');
+        } else {
+          console.error('N8N webhook responded with status:', response.status);
+        }
+      } catch (n8nError) {
+        console.error('N8N webhook call failed:', n8nError);
+        // Do not block user flow if webhook fails
+      }
 
       setIsSubmitted(true);
       toast.success("Thank you! Partial booking received. Check your email for payment to confirm your appointment.");
